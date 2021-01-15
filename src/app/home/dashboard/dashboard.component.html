@@ -1,0 +1,46 @@
+<form [formGroup]="dashboardForm" (ngSubmit)="onSubmit()">
+  <div class="container games" formArrayName="games">
+    <div *ngFor="let g of games.controls; let i = index">
+      <div [formGroupName]="i" class="game">
+        <div class="game--enter-scores">
+          <div class="game--team-score">
+            <h4 class="heading-4 home-away">{{ homeOrAway(g.get('homeTeam').value) }} </h4>
+            <img class="game--team-logo" src="assets/teams/vt.png" alt="VT Logo" />
+            <div class="game--team-name">Virginia Tech</div>
+            <input type="text" class="score score-vt" [formControlName]="homeScoreOrAwayScore(g.get('homeTeam').value)">
+          </div>
+          <div class="game--team-score">
+            <h4 class="heading-4 home-away">{{ homeOrAway(g.get('awayTeam').value) }}</h4>
+            <img class="game--team-logo" [src]="
+                        teamImage(
+                          getShortOppt(
+                            g.get('homeTeamAbbrev').value,
+                            g.get('awayTeamAbbrev').value
+                          )
+                        )
+                      " alt="Opponent Logo" />
+            <div class="game--team-name">{{
+              getOpponent(
+                g.get('homeTeam').value,
+                g.get('awayTeam').value
+              )
+            }}</div>
+            <input type="text" class="score score-opponent" [formControlName]="homeScoreOrAwayScore(g.get('awayTeam').value)">
+          </div>
+          <div class="game--attending">
+            <div class="game--attending-label">Attending?</div>
+            <label class="switch">
+              <input type="checkbox" formControlName="attendance">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="game--view-details">
+          <div class="game--date">{{ g.get('gameDate').value | date: 'longDate' }}</div>
+          <div class="game--time">{{ g.get('gameDate').value | date: 'shortTime' }}</div>
+          <a href="#" class="btn btn-details">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

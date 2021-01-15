@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  // COLORS
+  --color-primary: #600;
+  --color-primary-w-trans: rgb(247, 127, 0, 0.4);
+  --color-primary-light: rgb(255, 164, 69, 1);
+  --color-accent: #f60;
+  --color-accent-light: rgb(60, 191, 215);
+
+  --color-dark: #3d3737; //rgb(36, 32, 32);
+  --color-light: rgb(245, 245, 245);
+  --color-light-2: rgb(220, 220, 220);
+  --color-warn: rgba(214, 40, 40, 1);
+  --color: #f5f5f5;
+
+  --color-gray-dark-1: rgb(77, 68, 68);
+  --color-gray-dark-2: rgb(117, 104, 104);
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+
+  // UTTILITES
+  --margin-bottom-large: 8rem;
+  --margin-bottom-medium: 4rem;
+  --margin-bottom-small: 2rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-dark);
+  // padding: 1.5rem;
+  box-sizing: border-box;
+
+  // background-image: linear-gradient(to right bottom, var(--color-light), var(--color-light-2));
+  // background-size: cover;
+  // background-repeat: repeat;
+  background-color: var(--color-light);
+  min-height: 100vh;
+}
+
+.heading-1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 5rem;
+}
+
+.heading-2 {
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 1rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.heading-3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-gray-dark-1);
+}
+
+.heading-4 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-gray-dark-1);
+}
+
+.btn {
+  &:link,
+  &:visited {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-weight: 300;
+    font-size: 1.4rem;
+    border-radius: 20rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.8rem 1rem #4b4b4b;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.3rem 0.5rem #4b4b4b;
+  }
+}
+
+.btn-full {
+  background-color: var(--color-accent);
+  color: white;
+}
+.btn-outline {
+  background: none;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}

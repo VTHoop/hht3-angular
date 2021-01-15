@@ -1,0 +1,73 @@
+<div class="landing">
+
+  <main class="main">
+    <div class="container">
+      <img src="../../assets/hht_logo_flip.png" class="main--logo" alt="HHT_Logo" />
+      <h1 class="main--title heading-1">Where the Tailgate Never Ends</h1>
+      <div class="main--description">
+        <p>You look forward to getting together with your friends all week long. There's no reason the dialogue with
+          your friends
+          -- the inside scoop about your players, the predictions about the game, the trash-talking of your rivals
+          -- needs to take time off. </p>
+
+        <br>
+        <p>Let the fun happen all week long.</p>
+      </div>
+      <div class="main--actions">
+        <a href="#" class="btn btn-full">Sign Up Now</a>
+        <a href="#" class="btn btn-outline" (click)="showLogin=true">Login</a>
+      </div>
+    </div>
+  </main>
+  <section class="features">
+    <div class="container">
+      <h2 class="features--title heading-2">HHT Features</h2>
+      <div class="features--description">
+        <div class="feature">
+          <div class="feature--icon feature-1"><i class="material-icons">
+              sports_football
+            </i></div>
+          <h3 class="feature--title feature-1 heading-3">Bragging Rights</h3>
+          <div class="feature--description feature-1">Guess the score of the upcoming games. Earn bragging rights to
+            show your
+            buddies that you know the team best.</div>
+        </div>
+
+        <div class="feature">
+
+          <div class="feature--icon feature-2"><i class="material-icons">
+              outdoor_grill
+            </i></div>
+          <h3 class="feature--title feature-2 heading-3">Tailgate Planner</h3>
+          <div class="feature--description feature-2">Let your group know whether you plan on showing up and what you
+            plan on
+            bringing. Let's be honest, we've all been to the tailgate with 5 pasta salads.
+          </div>
+        </div>
+
+        <div class="feature">
+
+          <div class="feature--icon feature-3"><i class="material-icons">
+              storefront
+            </i></div>
+          <h3 class="feature--title feature-3 heading-3">Ticket Hub</h3>
+          <div class="feature--description feature-3">Not attending the game during Thanksgiving week? Make a deal with
+            your friends
+            before heading out to the secondary market.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="modal modal-login" [@showHide]="showLogin ? 'show' : 'hide'" >
+    <i class="material-icons modal--close" (click)="showLogin=false">
+      close
+    </i>
+    <h2 class="heading-2">Login</h2>
+    <input type="text" name="email" id="email" placeholder="email" required>
+    <input type="password" name="password" id="password" placeholder="password" required>
+    <button type="submit">Login</button>
+    <a href="#" class="forgot-password">Forgot Password</a>
+  </div>
+</div>
